@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Getreq />,
   },
   {
-    path: "/putreq",
+    path: "/putreq/:id",
     element: <Putreq />,
   },
 ]);

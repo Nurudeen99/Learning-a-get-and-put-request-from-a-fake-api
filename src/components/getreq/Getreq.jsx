@@ -32,7 +32,7 @@ useEffect(()=>{
        <div className="grid grid-cols-3 gap-6 px-[2rem]">
          {
            userDetails.map((userDetail)=>(
-            <Card key={userDetail.id} {...userDetail} onClick={()=>handleClickedToggle(userDetail.id)}/>
+            <Card key={userDetail.id} {...userDetail} onClick={()=>handleClickedToggle(userDetail.id)} toEachUserId={`/putreq/${userDetail.id}`}/>
            ))
          }
          {
