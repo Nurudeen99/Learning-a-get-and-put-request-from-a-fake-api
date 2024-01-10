@@ -26,8 +26,15 @@ const getUserDetailsFromApi =async ()=>{
 useEffect(()=>{
     getUserDetailsFromApi()
 },[])
+// localStorage.setItem("name","Nurudeen")
+const myName = localStorage.getItem("name")
+const hisHobby = JSON.parse(localStorage.getItem("hobby"))
+const food = localStorage.getItem("myFood")
 
   return (
+    <>
+       <div>My name is {myName} a Senior Dev.I love {hisHobby.like} and  my best food is {food}</div>
+       {/* <div> {hisHobby}</div> */}
     <div className="flex w-full min-h-screen gap-6 p-[5rem] ">
        <div className="grid grid-cols-3 gap-6 px-[2rem]">
          {
@@ -35,11 +42,14 @@ useEffect(()=>{
             <Card key={userDetail.id} {...userDetail} onClick={()=>handleClickedToggle(userDetail.id)} toEachUserId={`/putreq/${userDetail.id}`}/>
            ))
          }
+         
          {
             isUserDetailClicked && <SingleCard {...singleUserDetails} setIsUserDetailClicked={setIsUserDetailClicked}/>
          }
       </div>
     </div>
+    </>
+    
   )
 }
 

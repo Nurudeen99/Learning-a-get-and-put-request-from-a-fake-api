@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
 
 const Card = ({email,first_name,last_name,avatar,onClick,toEachUserId}) => {
+    localStorage.setItem("name","Nurudeen")
+    const myProfile = {
+        like:"coding"
+    }
+    localStorage.setItem("hobby",JSON.stringify(myProfile))
   return (
     <>
     <div onClick={onClick} className="font-bold bg-white flex flex-col item-center rounded-[0.5rem] h-[20rem]  gap-y-[1rem] items-center drop-shadow-xl rounded-[1.5rem] text-center w-[20rem] p-[1rem]">

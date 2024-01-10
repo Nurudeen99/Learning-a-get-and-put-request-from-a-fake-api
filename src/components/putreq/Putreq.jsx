@@ -38,10 +38,10 @@ const Putreq = () => {
                 method: 'post',
                 url: `https://reqres.in/api/users/${id}`,
                 data: {
-                      name: "",
-                      job: "",
-                      email: "",
-                      gender:"",
+                      name: name,
+                      job: job,
+                      email: email,
+                      gender:gender,
                       }
             })
             console.log("let me see the details;",userData.data)
@@ -52,6 +52,7 @@ const Putreq = () => {
         }
     }
 
+     localStorage.setItem("myFood","JollofRice")
   return (
     <>
     <div>
