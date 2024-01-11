@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import ProfileCard from "../../shared/ProfileCard"
+import Container from "../container/Container"
 
 const Profile = () => {
 
@@ -29,12 +30,12 @@ const Profile = () => {
     },[])
 
   return (
-    <>
+    <Container>
      
       {
         <ProfileCard  {...userProfile}/>
       }
-    </>
+    </Container>
   
     
   )

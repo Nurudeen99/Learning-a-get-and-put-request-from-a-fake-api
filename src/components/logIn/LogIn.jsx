@@ -2,6 +2,7 @@ import { useState } from "react"
 import Input from "../../shared/Input"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import Container from "../container/Container"
 
 const LogIn = () => {
     const navigateTo = useNavigate()
@@ -41,8 +42,8 @@ const LogIn = () => {
     }
 
   return (
-    <>
-    <div className="flex justify-center items-center min-h-screen">
+    <Container>
+    <div className="flex justify-center items-center p-[3rem] ">
         <form onSubmit={submitUserDetail} className="flex flex-col p-[2rem] gap-[2rem] bg-blue-200 rounded-xl drop-shadow-xl">
             <Input 
             onChange={handleUsername}
@@ -63,9 +64,10 @@ const LogIn = () => {
                    <button className={`${isLoading? "bg-red-500 " : "bg-green-500 "}bg-green-500 rounded-xl w-[8rem] h-[3rem]`}>{isLoading ? "LOADING..." : "SUBMIT"}</button>
             </div>
         </form>
+      
     </div>
     <div className="flex justify-center items-center  ">
-        <div className="flex flex-col p-[2rem]  bg-blue-200 rounded-xl drop-shadow-xl">
+        <div className="flex flex-col p-[2rem]  bg-green-200 rounded-xl drop-shadow-xl">
               <div className="flex flex-col items-center font-bold">
                 <h1>This is A Dummy Api...So Below Are list Of USERNAME and PASSWORD You Can Use</h1>
                    
@@ -92,7 +94,7 @@ const LogIn = () => {
         </div>
     </div>
     
-    </>
+    </Container>
   )
 }
 

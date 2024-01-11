@@ -2,6 +2,7 @@ import { useState } from "react"
 import Input from "../../shared/Input"
 import axios from "axios"
 import { useParams } from "react-router-dom"
+import Container from "../container/Container"
 
 const Putreq = () => {
 
@@ -41,7 +42,7 @@ const Putreq = () => {
                       name: name,
                       job: job,
                       email: email,
-                      gender:gender,
+                      gender:genderContainer,
                       }
             })
             console.log("let me see the details;",userData.data)
@@ -54,7 +55,7 @@ const Putreq = () => {
 
      localStorage.setItem("myFood","JollofRice")
   return (
-    <>
+    <Container>
     <div>
         <form onSubmit={handleSubmitUserData} className="flex flex-col justify-center items-center py-[2rem] gap-[1rem] min-h-screen ">
               <Input  value={name} onChange={handleName} label="Name" placeholder="Enter Your Full Name"/>
@@ -67,7 +68,7 @@ const Putreq = () => {
         </form>
     </div>
     
-    </>
+    </Container>
 
     )
 }

@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import Card from "../../shared/Card"
 import SingleCard from "../../shared/SingleCard"
+import Container from "../container/Container"
 
 const Getreq = () => {
     const [userDetails,setUserDetails] = useState([])
@@ -32,8 +33,8 @@ const hisHobby = JSON.parse(localStorage.getItem("hobby"))
 const food = localStorage.getItem("myFood")
 
   return (
-    <>
-       <div>My name is {myName} a Senior Dev.I love {hisHobby.like} and  my best food is {food}</div>
+    <Container>
+       {/* <div>My name is {myName} a Senior Dev.I love {hisHobby.like} and  my best food is {food}</div> */}
        {/* <div> {hisHobby}</div> */}
     <div className="flex w-full min-h-screen gap-6 p-[5rem] ">
        <div className="grid grid-cols-3 gap-6 px-[2rem]">
@@ -48,7 +49,7 @@ const food = localStorage.getItem("myFood")
          }
       </div>
     </div>
-    </>
+    </Container>
     
   )
 }

@@ -28,6 +28,10 @@ const router = createBrowserRouter([
     path: "/profile",
     element: <Profile />,
   },
+  {
+    path: "/login",
+    element: <LogIn />,
+  },
 ]);
 function App() {
   return (

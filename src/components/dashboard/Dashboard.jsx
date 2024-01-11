@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import UserDetailsCard from "../../shared/UserDetailsCard"
+import Container from "../container/Container"
 
 const Dashboard = () => {
 
@@ -31,8 +32,8 @@ const Dashboard = () => {
     },[])
 
   return (
-
-    <div className="flex w-full min-h-screen">
+    
+    <Container className="flex w-full min-h-screen">
          {/* {
             theUserDetail.company?.address?.address
          } */}
@@ -41,7 +42,10 @@ const Dashboard = () => {
          }
             
          
-    </div>
+    </Container>
+  
+
+    
   )
 }
 
