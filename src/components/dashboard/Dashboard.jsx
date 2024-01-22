@@ -33,7 +33,8 @@ const Dashboard = () => {
 
   return (
     
-    <Container className="flex w-full min-h-screen">
+    <Container>
+     <div className="flex w-full min-h-screen">
          {/* {
             theUserDetail.company?.address?.address
          } */}
@@ -42,7 +43,9 @@ const Dashboard = () => {
          }
             
          
+    </div>
     </Container>
+   
   
 
     

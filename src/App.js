@@ -6,6 +6,7 @@ import Putreq from './components/putreq/Putreq';
 import LogIn from './components/logIn/LogIn';
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-        <RouterProvider router={router} />
+    <>
+    <ToastContainer/>
+    <RouterProvider router={router} />
+    </>
+        
          );
 }
 

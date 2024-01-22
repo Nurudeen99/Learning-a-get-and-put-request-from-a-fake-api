@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Container from "../components/container/Container"
+import { toast } from "react-toastify"
 
 const UserDetailsCard = ({image,age,birthDate,bloodGroup,email,eyeColor,firstName,lastName,gender,height,university,phone}) => {
   return (
@@ -16,6 +17,7 @@ const UserDetailsCard = ({image,age,birthDate,bloodGroup,email,eyeColor,firstNam
                         <h1 className="text-green-500 font-bold">Want To See The Full Profile?</h1>
                 <Link to="/profile" className=" font-bold">
                     <button   className="text-white bg-green-500 h-[2.5rem]  rounded-[1rem]">CLICK HERE</button>  
+               
                 </Link>
                <h1><span className="text-red-500">Made</span> <span className="text-blue-500">With</span>  <span className=" text-red-500 font-bold">&hearts;</span>  </h1>   
              </div>
