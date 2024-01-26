@@ -13,7 +13,7 @@ const Getreq = () => {
 
        
 
-    const getUserDetailsFromApi =async ()=>{
+    const getUserDetailsFromApi = async ()=>{
       const userDetailFromApi = await axios("https://reqres.in/api/users?per_page=12")
       setUserDetails(userDetailFromApi.data.data)
     }

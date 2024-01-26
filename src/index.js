@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Container from './components/container/Container';
 import PageLoading from './components/pageloading/PageLoading';
+import About from './components/about/AboutMe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Container/> */}
     <App />
+    {/* <About/> */}
     {/* <PageLoading/> */}
   </React.StrictMode>
 );
