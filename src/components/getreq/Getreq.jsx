@@ -3,13 +3,14 @@ import { useEffect, useState } from "react"
 import Card from "../../shared/Card"
 import SingleCard from "../../shared/SingleCard"
 import Container from "../container/Container"
-import PageLoading from "../pageloading/PageLoading"
+// import PageLoading from "../pageloading/PageLoading"
+import { Bounce, toast } from "react-toastify"
 
 const Getreq = () => {
     const [userDetails,setUserDetails] = useState([])
     const [isUserDetailClicked,setIsUserDetailClicked] = useState(false)
     const [singleUserDetails,setSingleUserDetails]= useState({})
-    const [loadingPage,setLoadingPage] = useState(false)
+    // const [loadingPage,setLoadingPage] = useState(false)
 
        
 
@@ -28,11 +29,25 @@ async function handleClickedToggle(singleUserId){
    setIsUserDetailClicked(!isUserDetailClicked)
 
   } catch (error) {
-    setLoadingPage(true)
+    // setLoadingPage(true)
     console.log("let me see the network error:",error)
-    setLoadingPage(false)
+    if(error){
+      toast.error('🦄 OOPS...NETWORK ERROR,PLS CHECK YOUR INTERNET!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+    }
+    }
+    // setLoadingPage(false)
 
-  }
+  
     // const singleUserDetailsFromApi = await axios(`https://reqres.in/api/users/${singleUserId}`)
     //  console.log("singleUserDetailsFromApi:",singleUserDetailsFromApi.data.data)
     // setSingleUserDetails(singleUserDetailsFromApi.data.data)

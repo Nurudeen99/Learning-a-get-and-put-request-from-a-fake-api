@@ -6,8 +6,8 @@ const MyProfile = () => {
     <div className="text-center justify-center items-center pt-[1rem] py-[2rem] text-xl">
         <p>
       Front-End web developer and student at ZULFAH and Unilorin. When not coding or
-      reading, I like to play games and do some workout,cook (and eat), or to
-      just enjoy the Unilorin Shege at sch.
+      reading, I like to play games,watch movies and do some workout,cook (and eat), or to
+      just enjoy the <br /><span className="font-bold text-2xl text-red-500">💪💪Unilorin Shege!!!💪💪.</span>
        </p>
     </div>
     

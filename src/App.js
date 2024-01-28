@@ -8,6 +8,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
 import { ToastContainer } from 'react-toastify';
 import AboutMe from './components/about/AboutMe';
+import MoreAboutMe from './components/about/MoreAboutMe';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/aboutme",
     element: <AboutMe />,
+  },
+  {
+    path: "/moreaboutme",
+    element: <MoreAboutMe />,
   },
 ]);
 function App() {

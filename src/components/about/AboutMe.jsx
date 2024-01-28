@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import Button from "../../shared/Button"
 import Container from "../container/Container"
 import Avatar from "./Avatar"
 import MyProfile from "./MyProfile"
@@ -10,6 +12,13 @@ const AboutMe = () => {
       <Avatar/>
       <MyProfile/>
       <SkillList/>
+      <div className="p-[rem] font-bold flex flex-col justify-center items-center ">
+        <p>Want To Know MORE ABOUT THE DEVELOPER?</p>
+            <Link to="/moreaboutme">
+            <Button text="Click Here!!!"/>
+       </Link> 
+      </div>
+
     </div>
     </Container>
   )

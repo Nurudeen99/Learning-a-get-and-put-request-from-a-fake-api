@@ -6,12 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import Container from './components/container/Container';
 import PageLoading from './components/pageloading/PageLoading';
 import About from './components/about/AboutMe';
+import Button from './shared/Button';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Container/> */}
     <App />
+    {/* <Button/> */}
     {/* <About/> */}
     {/* <PageLoading/> */}
   </React.StrictMode>
