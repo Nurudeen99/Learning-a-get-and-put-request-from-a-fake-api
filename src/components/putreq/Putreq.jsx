@@ -3,12 +3,12 @@ import Input from "../../shared/Input"
 import axios from "axios"
 import { useParams } from "react-router-dom"
 import Container from "../container/Container"
+import { Bounce, toast } from "react-toastify"
 
 const Putreq = () => {
 
     const [isLoading,setIsLoading] = useState(false)
-
-
+    // const [submit,setSubmit] = useState(false)
     const {id} = useParams()
 
     const [name,setName] = useState("")
@@ -32,9 +32,11 @@ const Putreq = () => {
     }
 
    async function handleSubmitUserData (e){
-        e.preventDefault()
+    e.preventDefault()
         try {
+   
             setIsLoading(true)
+            // setSubmit(true)
             const userData = await axios({
                 method: 'post',
                 url: `https://reqres.in/api/users/${id}`,
@@ -42,12 +44,53 @@ const Putreq = () => {
                       name: name,
                       job: job,
                       email: email,
-                      gender:genderContainer,
+                      gender:gender,
                       }
+                      
             })
-            console.log("let me see the details;",userData.data)
+            if(!name || !job || !email || !gender){
+                toast.error('🦄 Some fields cannot be EMPTY!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                }); 
+            }else {
+                toast.success('🦄 SUBMITTED SUCCESSFULLY!', {
+                    position: "top-left",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    transition: Bounce,
+                    });
+            }
+                      
+             console.log("let me see the details;",userData.data)
             setIsLoading(false)
+            
         } catch (error) {
+           if(error){
+            toast.error(`🦄NETWORK ERROR`, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            }); 
+           }
             console.log("error:", error)
             setIsLoading(false)
         }

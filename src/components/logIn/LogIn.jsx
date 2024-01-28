@@ -3,8 +3,17 @@ import Input from "../../shared/Input"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Container from "../container/Container"
+import { ToastContainer, toast } from 'react-toastify';
+import { ImSpinner3 } from "react-icons/im";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
+    // const ourToastMessage = 
+    const [isSpinning,setIsSpining] = useState(false)
+    // function handleSpinning (){
+    //     setIsSpining(!isSpinning)
+    // }
     const navigateTo = useNavigate()
     const [isLoading,setIsLoading] = useState(false)
 
@@ -20,6 +29,7 @@ const LogIn = () => {
    async function submitUserDetail(e){
         try {
             e.preventDefault()
+            setIsSpining(true)
             setIsLoading(true)
             const userDetails = await axios({
                 method: "POST",
@@ -33,11 +43,42 @@ const LogIn = () => {
             })
             console.log("show me the userDetails:",userDetails)
             localStorage.setItem("theTokenIsHere",userDetails.data.token)
-            navigateTo("/dashboard")
+        
             setIsLoading(false)
+
+            navigateTo("/dashboard")
+                toast.success(`🦄 WELCOME ${userDetails.data.firstName}`, {
+                position: "top-left",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                })
+
+           
+           
         } catch (error) {
+            toast.error(`🦄 ${error.response.data.message}`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                })
             console.log("Let me see the error:",error)
             setIsLoading(false)
+            // if(error.response.status!=200){
+            //     alert(error.response.data.message)
+            // }
+            // if(error.response.status != 200){
+            //     alert(error.response.data.message)
+            //    }
         }
     }
 
@@ -61,13 +102,15 @@ const LogIn = () => {
             type="password"
             />
             <div className="flex justify-center">
+                   {/* <button className={`${isSpinning?  <ImSpinner3/> : "bg-green-500 "}bg-green-500 rounded-xl w-[8rem] h-[3rem]`}>{isLoading ? "LOADING..." : "SUBMIT"}</button> */}
+
                    <button className={`${isLoading? "bg-red-500 " : "bg-green-500 "}bg-green-500 rounded-xl w-[8rem] h-[3rem]`}>{isLoading ? "LOADING..." : "SUBMIT"}</button>
             </div>
         </form>
       
     </div>
     <div className="flex justify-center items-center  ">
-        <div className="flex flex-col p-[2rem]  bg-green-200 rounded-xl drop-shadow-xl">
+        <div className="flex flex-col p-[2rem]  rounded-xl drop-shadow-xl">
               <div className="flex flex-col items-center font-bold">
                 <h1>This is A Dummy Api...So Below Are list Of USERNAME and PASSWORD You Can Use</h1>
                    

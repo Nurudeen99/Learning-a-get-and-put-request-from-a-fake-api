@@ -6,6 +6,9 @@ import Putreq from './components/putreq/Putreq';
 import LogIn from './components/logIn/LogIn';
 import Dashboard from './components/dashboard/Dashboard';
 import Profile from './components/profile/Profile';
+import { ToastContainer } from 'react-toastify';
+import AboutMe from './components/about/AboutMe';
+import MoreAboutMe from './components/about/MoreAboutMe';
 
 const router = createBrowserRouter([
   {
@@ -32,10 +35,22 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LogIn />,
   },
+  {
+    path: "/aboutme",
+    element: <AboutMe />,
+  },
+  {
+    path: "/moreaboutme",
+    element: <MoreAboutMe />,
+  },
 ]);
 function App() {
   return (
-        <RouterProvider router={router} />
+    <>
+    <ToastContainer/>
+    <RouterProvider router={router} />
+    </>
+        
          );
 }
 
