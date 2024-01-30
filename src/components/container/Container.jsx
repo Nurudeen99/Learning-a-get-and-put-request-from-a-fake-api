@@ -9,7 +9,7 @@ const Container = ({children}) => {
             <div className="flex gap-[2rem]">
             <Link to="/login">LOG IN</Link>
             <h1>SIGN UP</h1>
-            <Link to="/aboutus">ABOUT US</Link>
+            <Link to="/aboutme">ABOUT US</Link>
         </div>  
     </nav>
 {

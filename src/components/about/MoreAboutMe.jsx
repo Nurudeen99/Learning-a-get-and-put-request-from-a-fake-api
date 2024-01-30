@@ -41,17 +41,11 @@ function handlePreviousAgain(){
        <div className="flex  gap-[3rem] items-center p-[3rem]">
            <div className={` flex justify-center items-center w-[2rem] h-[2rem] rounded-[2rem] ${step == 1 ?"bg-red-500":""}`}>1</div>
            <div className={` flex justify-center items-center w-[2rem] h-[2rem] rounded-[2rem] ${step == 2 ?"bg-red-500":""}`}>2</div>
-<<<<<<< HEAD
-           <div className={` flex justify-center items-center w-[2rem] h-[2rem] rounded-[2rem] ${step == 3 ?"bg-red-500":""}`}>3</div> 
-       </div>
-       <p>This is step {step}</p>
-=======
            <div className={` flex justify-center items-center w-[2rem] h-[2rem] rounded-[2rem] ${step == 3 ?"bg-red-500":""}`}>3</div>
           
           
        </div>
        {/* <p>This is step {step}</p> */}
->>>>>>> Nurudeen_Branch
        {step == 1 && <MyProfile/> || step == 2 && <Avatar/> || step == 3 && <SkillList/>}
        <div className="flex gap-[2rem]">
           <div onClick={handlePreviousAgain}>
