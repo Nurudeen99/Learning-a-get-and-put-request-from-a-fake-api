@@ -48,7 +48,7 @@ function handlePreviousAgain(){
        {/* <p>This is step {step}</p> */}
        {step == 1 && <MyProfile/> || step == 2 && <Avatar/> || step == 3 && <SkillList/>}
        <div className="flex gap-[2rem]">
-       <div onClick={handlePreviousAgain}>
+          <div onClick={handlePreviousAgain}>
               <Button text="PREVIOUS"/>
           </div>
           <div  onClick={handleNextAgain}>
